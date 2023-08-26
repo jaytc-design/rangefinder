@@ -6,3 +6,8 @@ realm = "shared"
 
 [dependencies]
 knit = "sleitnick/knit@1.5.1"
+component = "sleitnick/component@2.4.6"
+input = "sleitnick/input@2.1.1"
+pid = "sleitnick/pid@1.0.2"
+silo = "sleitnick/silo@0.1.1"
+loader = "sleitnick/loader@2.0.0"
