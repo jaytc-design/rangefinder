@@ -9,14 +9,14 @@
       },
       "Packages": {
         "$path": "Packages"
+      },
+      "Require": {
+        "$path": "src/require.lua"
       }
     },
     
     "ServerScriptService": {
       "Server": {
-        "$className": "Folder"
-      },
-      "ServerRuntime": {
         "$path": "src/server"
       }
     },
@@ -24,9 +24,6 @@
     "StarterPlayer": {
       "StarterPlayerScripts": {
         "Client": {
-          "$className": "Folder"
-        },
-        "ClientRuntime": {
           "$path": "src/client"
         }
       }
