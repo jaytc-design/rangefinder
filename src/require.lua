@@ -12,12 +12,18 @@ local function loadModules(parent: Folder, noDescendants: boolean?)
     for _, module in pairs(parent:GetChildren()) do
         if module == script then continue end
 
-        if module:IsA("ModuleScript") then
+        --[[if module:IsA("ModuleScript") then
             Modules[module.Name:lower()] = module
         elseif module:IsA("Folder") then
             if not noDescendants then
                 Modules[module.Name:lower()] = loadModules(module)
             end
+        end]]
+
+        if module:IsA("Folder") and not noDescendants then
+            Modules[module.Name:lower()] = loadModules(module)
+        else
+            Modules[module.Name:lower()] = module
         end
     end
 
@@ -36,11 +42,10 @@ elseif IS_CLIENT then
 end
 
 return function(name: string | ModuleScript)
-    assert(type(name) == "string" or (typeof(name) == "Instance" and name:IsA("ModuleScript")), "Expected string or modulescript for argument #1, got " .. typeof(name))
-
-    if typeof(name) == "Instance" then
+    if typeof(name) == "Instance" and name:IsA("ModuleScript") then
         return require(name)
     end
+    assert(type(name) == "string", "Expected string or modulescript for argument #1, got " .. typeof(name))
 
     name = name:lower()
 

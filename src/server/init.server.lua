@@ -1,8 +1,13 @@
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local ServerScriptService = game:GetService("ServerScriptService")
+local require = require(game:GetService("ReplicatedStorage").Require)
 
-local Loader = require(ReplicatedStorage.Packages.loader)
+local Knit = require("Packages/Knit")
 
-Loader.LoadDescendants(ServerScriptService.Server, function(moduleScript)
-	return moduleScript.Name:match("Service$") ~= nil
+for _, service in pairs(require("Server/Services")) do
+	require(service)
+end
+
+Knit.Start():catch(warn):andThen(function()
+	for _, component in pairs(require("Server/Components")) do
+		require(component)
+	end
 end)

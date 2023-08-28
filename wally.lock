@@ -8,9 +8,9 @@ version = "4.0.0"
 dependencies = []
 
 [[package]]
-name = "jay/pidtest"
-version = "0.1.0"
-dependencies = [["component", "sleitnick/component@2.4.6"], ["input", "sleitnick/input@2.1.1"], ["knit", "sleitnick/knit@1.5.1"], ["loader", "sleitnick/loader@2.0.0"], ["pid", "sleitnick/pid@1.0.2"], ["silo", "sleitnick/silo@0.1.1"]]
+name = "jay/rangefinder"
+version = "0.1.1"
+dependencies = [["component", "sleitnick/component@2.4.6"], ["knit", "sleitnick/knit@1.5.1"], ["trove", "sleitnick/trove@0.4.2"]]
 
 [[package]]
 name = "sleitnick/comm"
@@ -23,19 +23,9 @@ version = "2.4.6"
 dependencies = [["Promise", "evaera/promise@4.0.0"], ["Signal", "sleitnick/signal@1.5.0"], ["Symbol", "sleitnick/symbol@2.0.1"], ["Trove", "sleitnick/trove@0.4.2"]]
 
 [[package]]
-name = "sleitnick/input"
-version = "2.1.1"
-dependencies = [["Signal", "sleitnick/signal@1.5.0"], ["Trove", "sleitnick/trove@0.4.2"]]
-
-[[package]]
 name = "sleitnick/knit"
 version = "1.5.1"
 dependencies = [["Comm", "sleitnick/comm@0.3.1"], ["Promise", "evaera/promise@4.0.0"]]
-
-[[package]]
-name = "sleitnick/loader"
-version = "2.0.0"
-dependencies = []
 
 [[package]]
 name = "sleitnick/option"
@@ -43,18 +33,8 @@ version = "1.0.4"
 dependencies = []
 
 [[package]]
-name = "sleitnick/pid"
-version = "1.0.2"
-dependencies = []
-
-[[package]]
 name = "sleitnick/signal"
 version = "1.5.0"
-dependencies = []
-
-[[package]]
-name = "sleitnick/silo"
-version = "0.1.1"
 dependencies = []
 
 [[package]]
